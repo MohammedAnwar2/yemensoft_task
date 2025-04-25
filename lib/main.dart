@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:yemensoft_task/core/utils/app_router.dart';
+import 'core/services/init_services.dart';
 
-void main() {
+void main() async {
+  await InitServices.init();
   runApp(const MyApp());
 }
 
