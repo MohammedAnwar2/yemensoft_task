@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:yemensoft_task/core/error/exceptions.dart';
 
 abstract class Failure {
   final String errorMessage;
@@ -13,9 +14,12 @@ class ServerFailure extends Failure {
     if (e is DioException) {
       final errorMessage = _mapDioErrorToMessage(e);
       return ServerFailure(errorMessage);
+    } else if (e is ServerException) {
+      return ServerFailure(e.exception.toString());
     } else {
       return ServerFailure(
-          "An unknown error occurred. Please try again later.");
+        'An unexpected error occurred. Please try again later.',
+      );
     }
   }
 
