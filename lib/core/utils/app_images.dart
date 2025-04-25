@@ -33,5 +33,9 @@ class AppImages {
   /// Assets for imagesLogo
   /// assets/images/logo.svg
   static const String imagesLogo = "assets/images/logo.svg";
+
+  /// Assets for imagesLogo2
+  /// assets/images/logo2.svg
+  static const String imagesLogo2 = "assets/images/logo2.svg";
 }
 
