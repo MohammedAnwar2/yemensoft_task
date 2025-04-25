@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:yemensoft_task/features/login/presentation/widgets/login_view_body.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemensoft_task/core/services/get_it/get_it_imports.dart';
+import 'package:yemensoft_task/features/login/presentation/bloc/login_cubit/login_cubit.dart';
+import 'package:yemensoft_task/features/login/presentation/widgets/login_view_body_bloc_builder.dart';
 
 class LoginView extends StatelessWidget {
   static const String routeName = '/login';
@@ -8,9 +11,11 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // extendBody: true,
-       resizeToAvoidBottomInset: true, 
-      body: LoginViewBody(),
+      //  resizeToAvoidBottomInset: true,
+      body: BlocProvider(
+        create: (context) => getIt<LoginCubit>(),
+        child: LoginViewBodyBlocConsumer(),
+      ),
     );
   }
 }
