@@ -6,6 +6,10 @@ class AppImages {
   /// assets/images/arabic_flag.svg
   static const String imagesArabicFlag = "assets/images/arabic_flag.svg";
 
+  /// Assets for imagesCircle
+  /// assets/images/circle.svg
+  static const String imagesCircle = "assets/images/circle.svg";
+
   /// Assets for imagesDelivery
   /// assets/images/delivery.svg
   static const String imagesDelivery = "assets/images/delivery.svg";
