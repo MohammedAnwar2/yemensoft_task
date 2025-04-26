@@ -9,7 +9,7 @@ class GetNewBillsUsecase {
 
   GetNewBillsUsecase(this.repository);
 
-  Future<Either<Failure, List<DeliveryBillEntity>>> call() async {
+  Future<Either<Failure, List<OrderBillEntity>>> call() async {
     return await repository.getNewBills();
   }
 }
