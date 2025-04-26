@@ -36,10 +36,3 @@ class OrdersEmpty extends OrdersState {
 }
 
 class OrdersSavedLocaly extends OrdersState {}
-class OrdersOffline extends OrdersState {
-  final String message;
-  const OrdersOffline(this.message);
-
-  @override
-  List<Object> get props => [message];
-}
