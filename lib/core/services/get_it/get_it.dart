@@ -8,10 +8,10 @@ Future<void> initializationGetIt() async {
 
 void _initCoreDependencies() {
   getIt.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: Dio()));
-  final internetConnection = InternetConnectionChecker.instance;
-  getIt.registerLazySingleton<CheckNetworkConnection>(
-    () => CheckNetworkConnectionImp(internetConnection),
-  );
+  // final internetConnection = InternetConnectionChecker.instance;
+  // getIt.registerLazySingleton<CheckNetworkConnection>(
+  //   () => CheckNetworkConnectionImp(internetConnection),
+  // );
 }
 
 void _initFeaturesDependencies() {
@@ -61,7 +61,7 @@ void _orders() {
     () => OrderRepositoryImp(
       localDataSource: getIt<OrdersSharedPrefLocalDatasourceImp>(),
       remoteDataSource: getIt<OrdersRemoteDatasourceImp>(),
-      networkConnection: getIt<CheckNetworkConnection>(),
+      // networkConnection: getIt<CheckNetworkConnection>(),
     ),
   );
 
