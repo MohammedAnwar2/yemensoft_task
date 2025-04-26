@@ -6,9 +6,7 @@ import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/core/utils/functions/get_user_data.dart';
 
 class DeliveryInfoHeader extends StatelessWidget {
-  const DeliveryInfoHeader({
-    super.key,
-  });
+  const DeliveryInfoHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +40,21 @@ class DeliveryInfoHeader extends StatelessWidget {
                 child: Image.asset(AppImages.imagesDeliveryman),
               ),
               Positioned(
-              top: 40,
-              right: 16,
-              child: Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.circular(6),
+                top: 40,
+                right: 16,
+                child: Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: SvgPicture.asset(
+                    AppImages.imagesBlueLanguage,
+                    width: 20,
+                    height: 20,
+                  ),
                 ),
-                child: SvgPicture.asset(AppImages.imagesBlueLanguage,width: 20,height: 20),
               ),
-            )
             ],
           ),
         ],
