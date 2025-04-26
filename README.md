@@ -2,7 +2,7 @@ Flutter App README 🚀🎈✨
 Overview 🌟🌈💖
 This Flutter app, built with a Clean Architecture approach, delivers a seamless user experience with a Home Screen that fetches data from an API, saves it to a local database for filtering, and includes a 2-minute session timeout feature to redirect to the Login Screen. 🌻📱 The app integrates a custom Splash Screen and Login Screen, with a modular structure for scalability. 🎉🎊🥳
 Software Design Choices 🛠️🔧💡
-1. Architecture 🏛️🗼🌍
+# 1. Architecture 🏛️🗼🌍
 
 Clean Architecture: The app follows a Clean Architecture pattern with data, domain, and presentation layers, separated into a features directory. This ensures separation of concerns and testability. 🧩🛠️📐  
 Directory Structure: 📂✨  
