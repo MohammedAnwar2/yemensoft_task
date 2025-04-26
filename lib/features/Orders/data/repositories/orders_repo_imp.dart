@@ -10,12 +10,12 @@ import 'package:yemensoft_task/features/orders/domain/repositories/order_repo.da
 import '../datasources/local_datasource/orders_local_datasource.dart';
 import '../datasources/remote_datasource/orders_remote_datasource.dart';
 
-class OrderRepositoryImpl implements OrderRepository {
+class OrderRepositoryImp implements OrderRepository {
   final OrdersRemoteDatasource remoteDataSource;
   final OrdersLocalDatasource localDataSource;
   final CheckNetworkConnection networkConnection;
 
-  OrderRepositoryImpl({
+  OrderRepositoryImp({
     required this.remoteDataSource,
     required this.localDataSource,
     required this.networkConnection,

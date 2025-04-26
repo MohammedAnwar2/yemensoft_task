@@ -8,10 +8,15 @@ Future<void> initializationGetIt() async {
 
 void _initCoreDependencies() {
   getIt.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: Dio()));
+  final internetConnection = InternetConnectionChecker.instance;
+  getIt.registerLazySingleton<CheckNetworkConnection>(
+    () => CheckNetworkConnectionImp(internetConnection),
+  );
 }
 
 void _initFeaturesDependencies() {
   _auth();
+  _orders();
 }
 
 void _auth() {
@@ -32,5 +37,38 @@ void _auth() {
   );
   getIt.registerLazySingleton<AuthLocalDataSource>(
     () => SharedPrefrencesAuthRemoteDataSourceImpl(),
+  );
+}
+
+void _orders() {
+  getIt.registerFactory<OrdersCubit>(
+    () => OrdersCubit(
+      getNewBillsUsecase: getIt<GetNewBillsUsecase>(),
+      getOtherBillsUsecase: getIt<GetOtherBillsUsecase>(),
+      saveBillsUsecase: getIt<SaveBillsUsecase>(),
+    ),
+  );
+  getIt.registerLazySingleton<GetNewBillsUsecase>(
+    () => GetNewBillsUsecase(getIt<OrderRepositoryImp>()),
+  );
+  getIt.registerLazySingleton<GetOtherBillsUsecase>(
+    () => GetOtherBillsUsecase(getIt<OrderRepositoryImp>()),
+  );
+  getIt.registerLazySingleton<SaveBillsUsecase>(
+    () => SaveBillsUsecase(getIt<OrderRepositoryImp>()),
+  );
+  getIt.registerLazySingleton(
+    () => OrderRepositoryImp(
+      localDataSource: getIt<OrdersSharedPrefLocalDatasourceImp>(),
+      remoteDataSource: getIt<OrdersRemoteDatasourceImp>(),
+      networkConnection: getIt<CheckNetworkConnection>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<OrdersSharedPrefLocalDatasourceImp>(
+    () => OrdersSharedPrefLocalDatasourceImp.instance,
+  );
+  getIt.registerLazySingleton<OrdersRemoteDatasourceImp>(
+    () => OrdersRemoteDatasourceImp(getIt<ApiConsumer>()),
   );
 }

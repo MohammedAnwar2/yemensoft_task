@@ -5,13 +5,13 @@ import 'package:yemensoft_task/core/error/exceptions.dart';
 import 'package:yemensoft_task/features/orders/data/models/delivery_bill_model.dart';
 import 'orders_local_datasource.dart';
 
-class OrdersLocalDatasourceImp extends OrdersLocalDatasource {
-  static final OrdersLocalDatasourceImp instance =
-      OrdersLocalDatasourceImp._init();
+class OrdersSharedPrefLocalDatasourceImp extends OrdersLocalDatasource {
+  static final OrdersSharedPrefLocalDatasourceImp instance =
+      OrdersSharedPrefLocalDatasourceImp._init();
   static Database? _database;
   static const String _tableName = 'delivery_bills';
 
-  OrdersLocalDatasourceImp._init();
+  OrdersSharedPrefLocalDatasourceImp._init();
 
   Future<Database> get database async {
     if (_database != null) return _database!;
