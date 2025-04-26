@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:yemensoft_task/core/services/shared_pref.dart';
 import 'package:yemensoft_task/core/utils/app_images.dart';
+import 'package:yemensoft_task/core/utils/app_key.dart';
+import 'package:yemensoft_task/features/Orders/presentation/pages/orders_view.dart';
 import 'package:yemensoft_task/features/login/presentation/pages/login_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -37,7 +40,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).push(LoginView.routeName);
+      final bool isLoggedIn = SharedPref.getBool(AppKey.loginSession) ?? false;
+      if (isLoggedIn) {
+        GoRouter.of(context).go(OrdersView.routeName);
+      } else {
+        GoRouter.of(context).go(LoginView.routeName);
+      }
     });
   }
 }
