@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
@@ -24,11 +25,14 @@ class _OrdersTabsState extends State<OrdersTabs> {
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
       ),
-      child: Row(
-        children: [
-          _buildTab(title: '11'.tr(context), index: 0),
-          _buildTab(title: '12'.tr(context), index: 1),
-        ],
+      child: FadeInRight(
+        animate: true,
+        child: Row(
+          children: [
+            _buildTab(title: '11'.tr(context), index: 0),
+            _buildTab(title: '12'.tr(context), index: 1),
+          ],
+        ),
       ),
     );
   }

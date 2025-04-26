@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -57,34 +58,40 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           key: formKey,
           child: Column(
             children: [
-              LoginTopHeaderSection(),
+              FadeInLeft(child: LoginTopHeaderSection()),
               Padding(
                 padding: EdgeInsetsDirectional.only(end: 16),
                 child: Column(
                   children: [
                     const SizedBox(height: 132),
-                    Text('1'.tr(context), style: AppTextStyle.semiBold29),
+                    FadeInRight(child: Text('1'.tr(context), style: AppTextStyle.semiBold29)),
                     const SizedBox(height: 12),
-                    Text(
-                      '2'.tr(context),
-                      style: AppTextStyle.medium12,
+                    FadeInLeft(
+                      child: Text(
+                        '2'.tr(context),
+                        style: AppTextStyle.medium12,
+                      ),
                     ),
                     const SizedBox(height: 44),
-                    CustomTextFormField(
-                      text: "3".tr(context),
-                      controller: userIdController,
-                      validator: (p0) {
-                        return validateInput(p0!,'24'.tr(context));
-                      },
+                    FadeInRight(
+                      child: CustomTextFormField(
+                        text: "3".tr(context),
+                        controller: userIdController,
+                        validator: (p0) {
+                          return validateInput(p0!,'24'.tr(context));
+                        },
+                      ),
                     ),
                     const SizedBox(height: 8),
-                    CustomTextFormField(
-                      text: "4".tr(context),
-                      controller: passwordController,
-                      validator: (p0) {
-                        return validateInput(p0!,'24'.tr(context));
-                      },
-                      obscureText: true,
+                    FadeInLeft(
+                      child: CustomTextFormField(
+                        text: "4".tr(context),
+                        controller: passwordController,
+                        validator: (p0) {
+                          return validateInput(p0!,'24'.tr(context));
+                        },
+                        obscureText: true,
+                      ),
                     ),
                     const SizedBox(height: 25),
                     Align(
@@ -98,24 +105,26 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    CustomLoginButton(
-                      text: '6'.tr(context),
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {
-                          LoginEntities loginEntities = LoginEntities(
-                            delivryNO: userIdController.text,
-                            password: passwordController.text,
-                            lang: '2',
-                          );
-                          controller.login(loginEntities);
-                        } else {
-                          autovalidateMode = AutovalidateMode.always;
-                          setState(() {});
-                        }
-                      },
+                    FadeInUp(
+                      child: CustomLoginButton(
+                        text: '6'.tr(context),
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            LoginEntities loginEntities = LoginEntities(
+                              delivryNO: userIdController.text,
+                              password: passwordController.text,
+                              lang: '2',
+                            );
+                            controller.login(loginEntities);
+                          } else {
+                            autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
+                          }
+                        },
+                      ),
                     ),
                     const SizedBox(height: 49),
-                    SvgPicture.asset(AppImages.imagesDelivery),
+                    FadeInUp(child: SvgPicture.asset(AppImages.imagesDelivery)),
                   ],
                 ),
               ),

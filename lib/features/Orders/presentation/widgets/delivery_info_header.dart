@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,65 +22,67 @@ class DeliveryInfoHeader extends StatelessWidget {
         return Container(
           padding: EdgeInsetsDirectional.only(start: 16),
           color: AppColors.red,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.sizeOf(context).width * 0.5,
-                padding: const EdgeInsets.only(top: 15),
-                child: Text(
-                  getUserData().deliveryName!,
-                  style: AppTextStyle.bold25.copyWith(height: 1),
-                ),
-              ),
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  isEnglish
-                      ? Align(
-                        alignment: Alignment.centerRight,
-                        child: SvgPicture.asset(AppImages.imagesBlueCircle),
-                      )
-                      : Transform.rotate(
-                        angle: math.pi * -0.51,
-                        child: SvgPicture.asset(AppImages.imagesBlueCircle),
-                      ),
-                  Positioned.fill(
-                    top: 15,
-                    left: isEnglish ? -80 : null,
-                    right: isEnglish ? null : -50,
-                    child: Image.asset(AppImages.imagesDeliveryman),
+          child: FadeInDown(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.sizeOf(context).width * 0.5,
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Text(
+                    getUserData().deliveryName!,
+                    style: AppTextStyle.bold25.copyWith(height: 1),
                   ),
-                  Positioned(
-                    top: 40,
-                    right: isEnglish ? 16 : null,
-                    left: isEnglish ? null : 16,
-                    child: GestureDetector(
-                      onTap: () {
-                        showDialog(
-                          barrierDismissible: true,
-                          context: context,
-                          builder: (context) => const LanguageSelector(),
-                        );
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(6),
+                ),
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    isEnglish
+                        ? Align(
+                          alignment: Alignment.centerRight,
+                          child: SvgPicture.asset(AppImages.imagesBlueCircle),
+                        )
+                        : Transform.rotate(
+                          angle: math.pi * -0.51,
+                          child: SvgPicture.asset(AppImages.imagesBlueCircle),
                         ),
-                        child: SvgPicture.asset(
-                          AppImages.imagesBlueLanguage,
-                          width: 20,
-                          height: 20,
+                    Positioned.fill(
+                      top: 15,
+                      left: isEnglish ? -80 : null,
+                      right: isEnglish ? null : -50,
+                      child: Image.asset(AppImages.imagesDeliveryman),
+                    ),
+                    Positioned(
+                      top: 40,
+                      right: isEnglish ? 16 : null,
+                      left: isEnglish ? null : 16,
+                      child: GestureDetector(
+                        onTap: () {
+                          showDialog(
+                            barrierDismissible: true,
+                            context: context,
+                            builder: (context) => const LanguageSelector(),
+                          );
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: SvgPicture.asset(
+                            AppImages.imagesBlueLanguage,
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         );
       },
