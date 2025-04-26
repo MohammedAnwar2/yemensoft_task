@@ -14,6 +14,11 @@ abstract class AppTextStyle {
     color: AppColors.dartBlue,
     fontSize: 29,
   );
+  static const TextStyle semiBold23 = TextStyle(
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+    fontSize: 23,
+  );
   static const TextStyle semiBold14 = TextStyle(
     fontWeight: FontWeight.w600,
     color: AppColors.dartBlue,
@@ -50,5 +55,10 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.normal,
     color: AppColors.black,
     fontSize: 14,
+  );
+  static const TextStyle regular16 = TextStyle(
+    fontWeight: FontWeight.normal,
+    color: AppColors.black,
+    fontSize: 16,
   );
 }
