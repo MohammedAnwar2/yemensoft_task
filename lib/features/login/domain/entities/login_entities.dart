@@ -1,11 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 class LoginEntities extends Equatable {
+  String? deliveryName;
   final String? delivryNO;
   final String? password;
   final String? lang;
 
-  const LoginEntities({
+   LoginEntities({
+    this.deliveryName,
     this.delivryNO,
     this.password,
     this.lang,  

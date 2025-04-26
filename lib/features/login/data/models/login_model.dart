@@ -20,6 +20,7 @@ class LoginModel {
 
   factory LoginModel.fromEntity(LoginEntities loginEntities) {
     return LoginModel(
+      deliveryName: loginEntities.deliveryName,
       delivryNO: loginEntities.delivryNO,
       password: loginEntities.password,
       lang: loginEntities.lang,
@@ -28,6 +29,32 @@ class LoginModel {
   factory LoginModel.result(String? deliveryName, LoginModel loginModel) {
     return LoginModel(
       deliveryName: deliveryName,
+      delivryNO: loginModel.delivryNO,
+      password: loginModel.password,
+      lang: loginModel.lang,
+    );
+  }
+  factory LoginModel.fromJson(Map<String, dynamic> json) {
+    return LoginModel(
+      deliveryName: json['deliveryName'],
+      delivryNO: json['delivryNO'],
+      password: json['password'],
+      lang: json['lang'],
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'deliveryName': deliveryName,
+      'delivryNO': delivryNO,
+      'password': password,
+      'lang': lang,
+    };
+  }
+
+  static LoginEntities toLoginEntities(LoginModel loginModel) {
+    return LoginEntities(
+      deliveryName: loginModel.deliveryName,
       delivryNO: loginModel.delivryNO,
       password: loginModel.password,
       lang: loginModel.lang,
