@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/features/orders/presentation/widgets/orders_view_body.dart';
 
 class OrdersView extends StatelessWidget {
@@ -10,7 +9,6 @@ class OrdersView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: OrdersViewBody(),
     );
   }
