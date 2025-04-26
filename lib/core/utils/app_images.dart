@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class AppImages {
   AppImages._();
-  
+
   /// Assets for imagesArabicFlag
   /// assets/images/arabic_flag.svg
   static const String imagesArabicFlag = "assets/images/arabic_flag.svg";
@@ -50,4 +50,3 @@ class AppImages {
   /// assets/images/logo2.svg
   static const String imagesLogo2 = "assets/images/logo2.svg";
 }
-

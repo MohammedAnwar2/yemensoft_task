@@ -19,7 +19,17 @@ abstract class AppTextStyle {
     color: AppColors.dartBlue,
     fontSize: 14,
   );
+  static const TextStyle semiBold16 = TextStyle(
+    fontWeight: FontWeight.w600,
+    color: AppColors.dartBlue,
+    fontSize: 16,
+  );
   //!======================================= medium ========================================
+  static const TextStyle medium10 = TextStyle(
+    fontWeight: FontWeight.w500,
+    color: AppColors.grey,
+    fontSize: 10,
+  );
   static const TextStyle medium12 = TextStyle(
     fontWeight: FontWeight.w500,
     color: AppColors.dartBlue,
@@ -31,6 +41,11 @@ abstract class AppTextStyle {
     fontSize: 16,
   );
   //!======================================= regular ========================================
+  static const TextStyle regular8 = TextStyle(
+    fontWeight: FontWeight.normal,
+    color: AppColors.white,
+    fontSize: 8,
+  );
   static const TextStyle regular14 = TextStyle(
     fontWeight: FontWeight.normal,
     color: AppColors.black,
