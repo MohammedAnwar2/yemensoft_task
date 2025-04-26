@@ -1,5 +1,5 @@
-
 part of 'get_it_imports.dart';
+
 final getIt = GetIt.instance;
 Future<void> initializationGetIt() async {
   _initCoreDependencies();
@@ -22,9 +22,15 @@ void _auth() {
     () => LoginUsecase(loginRepo: getIt<AuthRepoImp>()),
   );
   getIt.registerLazySingleton(
-    () => AuthRepoImp(authRemoteDatasources: getIt<AuthRemoteDatasources>()),
+    () => AuthRepoImp(
+      authLocalDataSource: getIt<AuthLocalDataSource>(),
+      authRemoteDatasources: getIt<AuthRemoteDatasources>(),
+    ),
   );
   getIt.registerLazySingleton<AuthRemoteDatasources>(
     () => AuthRemoteDatasourcesImp(apiConsumer: getIt<ApiConsumer>()),
+  );
+  getIt.registerLazySingleton<AuthLocalDataSource>(
+    () => SharedPrefrencesAuthRemoteDataSourceImpl(),
   );
 }

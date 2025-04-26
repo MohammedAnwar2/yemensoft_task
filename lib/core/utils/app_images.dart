@@ -6,6 +6,14 @@ class AppImages {
   /// assets/images/arabic_flag.svg
   static const String imagesArabicFlag = "assets/images/arabic_flag.svg";
 
+  /// Assets for imagesBlueCircle
+  /// assets/images/blue_circle.svg
+  static const String imagesBlueCircle = "assets/images/blue_circle.svg";
+
+  /// Assets for imagesBlueLanguage
+  /// assets/images/blue_language.svg
+  static const String imagesBlueLanguage = "assets/images/blue_language.svg";
+
   /// Assets for imagesCircle
   /// assets/images/circle.svg
   static const String imagesCircle = "assets/images/circle.svg";
