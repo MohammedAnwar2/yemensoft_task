@@ -8,8 +8,6 @@ class OrdersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: OrdersViewBody(),
-    );
+    return Scaffold(body: OrdersViewBody());
   }
 }
