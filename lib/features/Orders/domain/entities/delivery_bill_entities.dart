@@ -1,4 +1,4 @@
-class DeliveryBillEntity {
+class OrderBillEntity {
   final String billSrl;
   final String billDate;
   final double billAmt;
@@ -6,7 +6,7 @@ class DeliveryBillEntity {
   final double dlvryAmt;
   final int dlvryStatusFlg;
 
-  DeliveryBillEntity({
+  OrderBillEntity({
     required this.billSrl,
     required this.billDate,
     required this.billAmt,

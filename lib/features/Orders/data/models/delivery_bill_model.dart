@@ -1,4 +1,6 @@
-class DeliveryBillModel {
+import 'package:yemensoft_task/features/orders/domain/entities/delivery_bill_entities.dart';
+
+class OrderBillModel {
   String? billType;
   String? billNo;
   String? billSrl;
@@ -18,7 +20,7 @@ class DeliveryBillModel {
   String? longitude;
   String? dlvryStatusFlg;
 
-  DeliveryBillModel({
+  OrderBillModel({
     this.billType,
     this.billNo,
     this.billSrl,
@@ -39,8 +41,19 @@ class DeliveryBillModel {
     this.dlvryStatusFlg,
   });
 
-  factory DeliveryBillModel.fromJson(Map<String, dynamic> json) {
-    return DeliveryBillModel(
+  static OrderBillEntity toOrderBillEntities(OrderBillModel model) {
+    return OrderBillEntity(
+      billSrl: model.billSrl ?? '',
+      billDate: model.billDate ?? '',
+      billAmt: double.tryParse(model.billAmt ?? '0') ?? 0.0,
+      taxAmt: double.tryParse(model.taxAmt ?? '0') ?? 0.0,
+      dlvryAmt: double.tryParse(model.dlvryAmt ?? '0') ?? 0.0,
+      dlvryStatusFlg: int.tryParse(model.dlvryStatusFlg ?? '0') ?? 0,
+    );
+  }
+
+  factory OrderBillModel.fromJson(Map<String, dynamic> json) {
+    return OrderBillModel(
       billType: json['BILL_TYPE'] as String?,
       billNo: json['BILL_NO'] as String?,
       billSrl: json['BILL_SRL'] as String?,
