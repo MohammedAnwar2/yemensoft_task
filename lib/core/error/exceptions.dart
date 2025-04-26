@@ -8,3 +8,9 @@ class EmptyCacheException implements Exception {
 
   EmptyCacheException({required this.errorMessage});
 }
+
+class QueriesException implements Exception {
+  final String errorMessage;
+
+  QueriesException({required this.errorMessage});
+}

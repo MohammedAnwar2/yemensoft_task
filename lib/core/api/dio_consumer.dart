@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:yemensoft_task/core/error/exceptions.dart';
 import 'package:yemensoft_task/core/api/api_consumer.dart';
 import 'package:yemensoft_task/core/api/api_interceptors.dart';
 import 'package:yemensoft_task/core/api/end_ponits.dart';
@@ -35,7 +34,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } catch (e) {
-      throw ServerException(e);
+      rethrow;
     }
   }
 
@@ -53,7 +52,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } catch (e) {
-      throw ServerException(e);
+      rethrow;
     }
   }
 
@@ -72,7 +71,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } catch (e) {
-      throw ServerException(e);
+      rethrow;
     }
   }
 
@@ -91,7 +90,7 @@ class DioConsumer extends ApiConsumer {
       );
       return response.data;
     } catch (e) {
-      throw ServerException(e);
+      rethrow;
     }
   }
 }

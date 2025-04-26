@@ -13,6 +13,7 @@ class ServerFailure extends Failure {
   factory ServerFailure.handleException(Object e) {
     if (e is DioException) {
       final errorMessage = _mapDioErrorToMessage(e);
+      print("errorMessage ============= $errorMessage");
       return ServerFailure(errorMessage);
     } else if (e is ServerException) {
       return ServerFailure(e.exception.toString());
@@ -26,7 +27,7 @@ class ServerFailure extends Failure {
   static String _mapDioErrorToMessage(DioException e) {
     switch (e.type) {
       case DioExceptionType.connectionTimeout:
-        return "Connection timed out. Please check your internet connection and try again.";
+        return "Connection timed out. Please check your internet connection.";
       case DioExceptionType.sendTimeout:
         return "Request timed out while sending data. Please try again later.";
       case DioExceptionType.receiveTimeout:
@@ -38,7 +39,7 @@ class ServerFailure extends Failure {
       case DioExceptionType.cancel:
         return "The request was canceled. Please try again.";
       case DioExceptionType.connectionError:
-        return "Failed to establish a connection. Please check your network and try again.";
+        return "no internet connection";
       case DioExceptionType.unknown:
         return "An unknown error occurred. Please try again later.";
     }
@@ -68,6 +69,9 @@ class EmptyCacheFailure extends Failure {
   EmptyCacheFailure(super.errorMessage);
 }
 
+class QueriesFailure extends Failure {
+  QueriesFailure(super.errorMessage);
+}
 class OfflineFailure extends Failure {
   OfflineFailure(super.errorMessage);
 }
