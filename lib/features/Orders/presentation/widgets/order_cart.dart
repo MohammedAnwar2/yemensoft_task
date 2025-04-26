@@ -6,7 +6,7 @@ import 'package:yemensoft_task/features/orders/domain/entities/delivery_bill_ent
 import 'package:yemensoft_task/features/orders/presentation/widgets/order_details_button.dart';
 
 class OrderCard extends StatelessWidget {
-  final DeliveryBillEntity deliveryBillEntity;
+  final OrderBillEntity deliveryBillEntity;
   const OrderCard({super.key, required this.deliveryBillEntity});
 
   @override

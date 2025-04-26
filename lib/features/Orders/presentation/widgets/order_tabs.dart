@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
+
+import '../cubit/orders_cubit/orders_cubit.dart';
 
 class OrdersTabs extends StatefulWidget {
   const OrdersTabs({super.key});
@@ -36,6 +39,11 @@ class _OrdersTabsState extends State<OrdersTabs> {
         onTap: () {
           setState(() {
             selectedIndex = index;
+            if(selectedIndex == 0) {
+              context.read<OrdersCubit>().getNewBills();
+            } else {
+              context.read<OrdersCubit>().getOtherBills();
+            }
           });
         },
         child: Container(

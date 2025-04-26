@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yemensoft_task/features/orders/presentation/widgets/delivery_info_header.dart';
-import 'package:yemensoft_task/features/orders/presentation/widgets/order_card_listview.dart';
+import 'package:yemensoft_task/features/orders/presentation/widgets/order_cart_listview_bloc_consumer.dart';
 import 'package:yemensoft_task/features/orders/presentation/widgets/order_tabs.dart';
 
 class OrdersViewBody extends StatelessWidget {
@@ -9,7 +9,11 @@ class OrdersViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [DeliveryInfoHeader(), OrdersTabs(), OrderCardListView()],
+      children: [
+        DeliveryInfoHeader(),
+        OrdersTabs(),
+        Expanded(child: OrderCartListViewBlocConsumer()),
+      ],
     );
   }
 }
