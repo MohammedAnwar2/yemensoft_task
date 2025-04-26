@@ -3,9 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:yemensoft_task/core/utils/app_images.dart';
 
 class LoginTopHeaderSection extends StatelessWidget {
-  const LoginTopHeaderSection({
-    super.key,
-  });
+  const LoginTopHeaderSection({super.key});
 
   @override
   Widget build(BuildContext context) {

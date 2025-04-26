@@ -18,5 +18,4 @@ class LoginCubit extends Cubit<LoginState> {
       (success) => emit(LoginSuccess()),
     );
   }
-
 }

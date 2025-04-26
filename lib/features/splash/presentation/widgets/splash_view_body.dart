@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:yemensoft_task/core/utils/app_images.dart';
 import 'package:yemensoft_task/features/login/presentation/pages/login_view.dart';
 
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -18,6 +17,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     navigateToHome();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,12 +34,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       ),
     );
   }
-   void navigateToHome() {
-    Future.delayed(
-      const Duration(seconds: 2),
-      () {
-        GoRouter.of(context).push(LoginView.routeName);
-      },
-    );
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      GoRouter.of(context).push(LoginView.routeName);
+    });
   }
 }

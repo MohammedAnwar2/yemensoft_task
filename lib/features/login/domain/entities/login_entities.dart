@@ -6,12 +6,7 @@ class LoginEntities extends Equatable {
   final String? password;
   final String? lang;
 
-   LoginEntities({
-    this.deliveryName,
-    this.delivryNO,
-    this.password,
-    this.lang,  
-  });
+  LoginEntities({this.deliveryName, this.delivryNO, this.password, this.lang});
 
   @override
   List<Object?> get props => [delivryNO, password, lang];
