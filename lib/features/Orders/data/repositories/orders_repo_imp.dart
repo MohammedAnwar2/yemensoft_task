@@ -13,18 +13,19 @@ import '../datasources/remote_datasource/orders_remote_datasource.dart';
 class OrderRepositoryImp implements OrderRepository {
   final OrdersRemoteDatasource remoteDataSource;
   final OrdersLocalDatasource localDataSource;
-  final CheckNetworkConnection networkConnection;
+  // final CheckNetworkConnection networkConnection;
 
   OrderRepositoryImp({
     required this.remoteDataSource,
     required this.localDataSource,
-    required this.networkConnection,
+    // required this.networkConnection,
   });
 
   @override
   Future<Either<Failure, List<OrderBillEntity>>> getNewBills() async {
     try {
       List<OrderBillModel> localBills = await localDataSource.getNewBills();
+      print("localBills.length ============= ${localBills.length}");
       List<OrderBillEntity> orderBillEntity = [];
       mappingData(localBills, orderBillEntity);
       return Either.right(orderBillEntity);
@@ -48,19 +49,21 @@ class OrderRepositoryImp implements OrderRepository {
   @override
   Future<Either<Failure, void>> saveBills() async {
     try {
-      if (await networkConnection.isConnected) {
-        LoginEntities loginEntities = getPrivateUserDate();
-        List<OrderBillModel> bills = await remoteDataSource.fetchDeliveryBills(
-          loginEntities.delivryNO!,
-          loginEntities.lang!,
-        );
-        localDataSource.clear();
-        await localDataSource.insert(bills);
-        return Either.right(null);
-      } else {
-        return Either.left(OfflineFailure('No internet connection'));
-      }
-    } on ServerException catch (e) {
+      // if (await networkConnection.isConnected) {
+      LoginEntities loginEntities = getPrivateUserDate();
+      List<OrderBillModel> bills = await remoteDataSource.fetchDeliveryBills(
+        loginEntities,
+      );
+      print("bills.length ============= ${bills.length}");
+      localDataSource.clear();
+      await localDataSource.insert(bills);
+      return Either.right(null);
+      // } else {
+      //   return Either.left(OfflineFailure('No internet connection'));
+      // }
+    } on QueriesException catch (e) {
+      return Either.left(QueriesFailure(e.errorMessage));
+    } catch (e) {
       return Either.left(ServerFailure.handleException(e));
     }
   }

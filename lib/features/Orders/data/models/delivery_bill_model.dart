@@ -1,3 +1,4 @@
+import 'package:yemensoft_task/features/login/domain/entities/login_entities.dart';
 import 'package:yemensoft_task/features/orders/domain/entities/delivery_bill_entities.dart';
 
 class OrderBillModel {
@@ -75,24 +76,68 @@ class OrderBillModel {
     );
   }
 
-  Map<String, dynamic> toJson() => {
-    'BILL_TYPE': billType,
-    'BILL_NO': billNo,
-    'BILL_SRL': billSrl,
-    'BILL_DATE': billDate,
-    'BILL_TIME': billTime,
-    'BILL_AMT': billAmt,
-    'TAX_AMT': taxAmt,
-    'DLVRY_AMT': dlvryAmt,
-    'MOBILE_NO': mobileNo,
-    'CSTMR_NM': cstmrNm,
-    'RGN_NM': rgnNm,
-    'CSTMR_BUILD_NO': cstmrBuildNo,
-    'CSTMR_FLOOR_NO': cstmrFloorNo,
-    'CSTMR_APRTMNT_NO': cstmrAprtmntNo,
-    'CSTMR_ADDRSS': cstmrAddrss,
-    'LATITUDE': latitude,
-    'LONGITUDE': longitude,
-    'DLVRY_STATUS_FLG': dlvryStatusFlg,
-  };
+factory OrderBillModel.fromMap(Map<String, dynamic> json) {
+  return OrderBillModel(
+    billType: json['bill_type'] as String?,
+    billNo: json['bill_no'] as String?,
+    billSrl: json['bill_srl'] as String?,
+    billDate: json['bill_date'] as String?,
+    billTime: json['bill_time'] as String?,
+    billAmt: json['bill_amt'] as String?,
+    taxAmt: json['tax_amt'] as String?,
+    dlvryAmt: json['dlvry_amt'] as String?,
+    mobileNo: json['mobile_no'] as String?,
+    cstmrNm: json['cstmr_nm'] as String?,
+    rgnNm: json['rgn_nm'] as String?,
+    cstmrBuildNo: json['cstmr_build_no'] as String?,
+    cstmrFloorNo: json['cstmr_floor_no'] as String?,
+    cstmrAprtmntNo: json['cstmr_aprtmnt_no'] as String?,
+    cstmrAddrss: json['cstmr_addrss'] as String?,
+    latitude: json['latitude'] as String?,
+    longitude: json['longitude'] as String?,
+    dlvryStatusFlg: json['dlvry_status_flg'] as String?,
+  );
+}
+  Map<String, dynamic> toMap() {
+    return {
+      "BILL_TYPE": billType,
+      "BILL_NO": billNo,
+      "BILL_SRL": billSrl,
+      "BILL_DATE": billDate,
+      "BILL_TIME": billTime,
+      "BILL_AMT": billAmt,
+      "TAX_AMT": taxAmt,
+      "DLVRY_AMT": dlvryAmt,
+      "MOBILE_NO": mobileNo,
+      "CSTMR_NM": cstmrNm,
+      "RGN_NM": rgnNm,
+      "CSTMR_BUILD_NO": cstmrBuildNo,
+      "CSTMR_FLOOR_NO": cstmrFloorNo,
+      "CSTMR_APRTMNT_NO": cstmrAprtmntNo,
+      "CSTMR_ADDRSS": cstmrAddrss,
+      "LATITUDE": latitude,
+      "LONGITUDE": longitude,
+      "DLVRY_STATUS_FLG": dlvryStatusFlg
+    };
+  }
+
+
+  static Map<String, dynamic> toJson(LoginEntities loginEntities) {
+    return {
+    "Value": {
+        "P_DLVRY_NO": "1010",
+        "P_LANG_NO": "1",
+        "P_BILL_SRL": "",
+        "P_PRCSSD_FLG": ""
+    }
+};
+    // return {
+    //   "Value": {
+    //     "P_DLVRY_NO": loginEntities.delivryNO,
+    //     "P_LANG_NO": loginEntities.lang,
+    //     "P_BILL_SRL": "",
+    //     "P_PRCSSD_FLG": "",
+    //   },
+    // };
+  }
 }
