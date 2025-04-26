@@ -16,9 +16,7 @@ class OrdersCubit extends Cubit<OrdersState> {
     required this.getNewBillsUsecase,
     required this.getOtherBillsUsecase,
     required this.saveBillsUsecase,
-  }) : super(OrdersInitial()){
-    saveBills();
-  }
+  }) : super(OrdersInitial());
   Future<void> getNewBills() async {
     emit(OrdersLoading());
     final result = await getNewBillsUsecase.call();
