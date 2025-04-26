@@ -40,8 +40,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future get(String path,
-      {Object? data, Map<String, dynamic>? queryParameters}) async {
+  Future get(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     try {
       final response = await dio.get(
         path,
