@@ -9,7 +9,7 @@ class SessionManager {
 
   void startSessionTimer(BuildContext context) {
     _timer?.cancel();
-    _timer = Timer(Duration(seconds: 5), () {
+    _timer = Timer(Duration(minutes: 2), () {
       _logout(context);
     });
   }
