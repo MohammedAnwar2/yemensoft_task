@@ -1,16 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/core/utils/functions/filter_stauts.dart';
 
 class OrderDetailsButton extends StatelessWidget {
-  const OrderDetailsButton({
-    super.key,
-    required this.status,
-  });
+  const OrderDetailsButton({super.key, required this.status});
 
-  final String status ;
+  final String status;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +19,9 @@ class OrderDetailsButton extends StatelessWidget {
         ),
       ),
       child: InkWell(
-        onTap: (){},
+        onTap: () {},
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 24,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

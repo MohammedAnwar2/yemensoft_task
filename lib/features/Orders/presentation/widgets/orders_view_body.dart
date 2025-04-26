@@ -9,11 +9,7 @@ class OrdersViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        DeliveryInfoHeader(),
-        OrdersTabs(),
-        OrderCardListView(),
-      ],
+      children: [DeliveryInfoHeader(), OrdersTabs(), OrderCardListView()],
     );
   }
 }

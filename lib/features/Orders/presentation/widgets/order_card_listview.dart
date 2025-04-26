@@ -5,9 +5,7 @@ import 'package:yemensoft_task/features/orders/domain/entities/delivery_bill_ent
 import 'package:yemensoft_task/features/orders/presentation/widgets/order_cart.dart';
 
 class OrderCardListView extends StatelessWidget {
-  const OrderCardListView({
-    super.key,
-  });
+  const OrderCardListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class OrderCardListView extends StatelessWidget {
               billSrl: "1569987",
               billAmt: 150.0,
               dlvryAmt: 10,
-              dlvryStatusFlg: Random().nextInt(3-0+1),
+              dlvryStatusFlg: Random().nextInt(3 - 0 + 1),
               taxAmt: 200,
               billDate: '2023-10-01',
             ),

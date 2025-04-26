@@ -11,7 +11,6 @@ filterStatus({required String status}) {
     case 'Delivered':
       return AppColors.grey;
     default:
-      return AppColors.grey;  
-        
+      return AppColors.grey;
   }
 }

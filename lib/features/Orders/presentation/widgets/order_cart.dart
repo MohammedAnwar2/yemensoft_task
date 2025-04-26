@@ -43,7 +43,11 @@ class OrderCard extends StatelessWidget {
                         color: AppColors.black,
                       ),
                       _verticalDivider(),
-                      _buildInfoColumn("Date", deliveryBillEntity.billDate, color: AppColors.black),
+                      _buildInfoColumn(
+                        "Date",
+                        deliveryBillEntity.billDate,
+                        color: AppColors.black,
+                      ),
                     ],
                   ),
                 ],
