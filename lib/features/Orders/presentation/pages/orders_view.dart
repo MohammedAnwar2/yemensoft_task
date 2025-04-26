@@ -14,7 +14,7 @@ class OrdersView extends StatefulWidget {
 }
 
 class _OrdersViewState extends State<OrdersView> with WidgetsBindingObserver {
-  SessionManager sessionManager = SessionManager();
+  final sessionManager = getIt<SessionManager>(); 
   @override
   void initState() {
      WidgetsBinding.instance.addObserver(this);

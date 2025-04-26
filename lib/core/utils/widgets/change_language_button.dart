@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:yemensoft_task/core/services/get_it/get_it_imports.dart';
 import 'package:yemensoft_task/core/services/shared_pref.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_images.dart';
@@ -9,6 +10,8 @@ import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/core/utils/extentions.dart';
 import 'package:yemensoft_task/features/localization/app_localizations.dart';
 import 'package:yemensoft_task/features/localization/manager/language_cubit.dart';
+
+import '../../services/session_manager.dart';
 
 
 class LanguageSelector extends StatefulWidget {
@@ -20,7 +23,7 @@ class LanguageSelector extends StatefulWidget {
 
 class _LanguageSelectorState extends State<LanguageSelector> {
   bool isArabic = false;
-
+  final sessionManager = getIt<SessionManager>();
   @override
   void initState() {
     isArabic = context.read<LanguageCubit>().state.locale.languageCode == 'ar';
@@ -29,6 +32,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
 
   void changeLanguage(int index) {
     setState(() {
+      sessionManager.resetSessionTimer(context);
       isArabic = index == 0;
     });
   }

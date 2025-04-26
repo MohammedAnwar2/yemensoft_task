@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:yemensoft_task/core/services/get_it/get_it_imports.dart';
+import 'package:yemensoft_task/core/services/session_manager.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/features/localization/app_localizations.dart';
@@ -16,7 +18,7 @@ class OrdersTabs extends StatefulWidget {
 
 class _OrdersTabsState extends State<OrdersTabs> {
   int selectedIndex = 0;
-
+  final sessionManager = getIt<SessionManager>(); 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,6 +44,7 @@ class _OrdersTabsState extends State<OrdersTabs> {
     return Expanded(
       child: GestureDetector(
         onTap: () {
+          sessionManager.resetSessionTimer(context);
           setState(() {
             selectedIndex = index;
             if(selectedIndex == 0) {

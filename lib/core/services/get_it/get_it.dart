@@ -8,6 +8,8 @@ Future<void> initializationGetIt() async {
 
 void _initCoreDependencies() {
   getIt.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: Dio()));
+
+  getIt.registerSingleton<SessionManager>(SessionManager());
   // final internetConnection = InternetConnectionChecker.instance;
   // getIt.registerLazySingleton<CheckNetworkConnection>(
   //   () => CheckNetworkConnectionImp(internetConnection),

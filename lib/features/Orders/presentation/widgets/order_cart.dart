@@ -35,12 +35,16 @@ class OrderCard extends StatelessWidget {
                       _buildInfoColumn(
                         "14".tr(context),
                         deliveryBillEntity.status(context),
-                        color: filterStatus(status: deliveryBillEntity.status(context)),
+                        color: filterStatus(
+                          status: deliveryBillEntity.status(context),
+                          context: context,
+                        ),
                       ),
                       _verticalDivider(),
                       _buildInfoColumn(
                         "15".tr(context),
-                        deliveryBillEntity.totalPrice.toString(),
+                        double.parse( deliveryBillEntity.totalPrice.toStringAsFixed(2)).toString(),
+                       
                         color: AppColors.black,
                       ),
                       _verticalDivider(),

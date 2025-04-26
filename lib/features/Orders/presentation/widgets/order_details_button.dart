@@ -16,7 +16,7 @@ class OrderDetailsButton extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
-            color: filterStatus(status: status),
+            color: filterStatus(status: status, context: context),
             borderRadius: _borderMethod(state.locale.languageCode),
           ),
           child: InkWell(
