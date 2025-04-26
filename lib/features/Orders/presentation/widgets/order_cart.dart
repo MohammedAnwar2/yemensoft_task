@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/core/utils/functions/filter_stauts.dart';
+import 'package:yemensoft_task/features/localization/app_localizations.dart';
 import 'package:yemensoft_task/features/orders/domain/entities/delivery_bill_entities.dart';
 import 'package:yemensoft_task/features/orders/presentation/widgets/order_details_button.dart';
 
@@ -32,19 +33,19 @@ class OrderCard extends StatelessWidget {
                   Row(
                     children: [
                       _buildInfoColumn(
-                        "Status",
-                        deliveryBillEntity.status,
-                        color: filterStatus(status: deliveryBillEntity.status),
+                        "14".tr(context),
+                        deliveryBillEntity.status(context),
+                        color: filterStatus(status: deliveryBillEntity.status(context)),
                       ),
                       _verticalDivider(),
                       _buildInfoColumn(
-                        "Total price",
+                        "15".tr(context),
                         deliveryBillEntity.totalPrice.toString(),
                         color: AppColors.black,
                       ),
                       _verticalDivider(),
                       _buildInfoColumn(
-                        "Date",
+                        "16".tr(context),
                         deliveryBillEntity.billDate,
                         color: AppColors.black,
                       ),
@@ -54,7 +55,7 @@ class OrderCard extends StatelessWidget {
               ),
             ),
             // Order Details Button
-            OrderDetailsButton(status: deliveryBillEntity.status),
+            OrderDetailsButton(status: deliveryBillEntity.status(context)),
           ],
         ),
       ),

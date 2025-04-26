@@ -8,7 +8,12 @@ abstract class AppTextStyle {
     color: AppColors.white,
     fontSize: 25,
   );
-  //!======================================= semiBold ========================================
+  static const TextStyle bold12 = TextStyle(
+    fontWeight: FontWeight.bold,
+    color: AppColors.dartBlue,
+    fontSize: 12,
+  );
+  //!!============================= semiBold ========================================
   static const TextStyle semiBold29 = TextStyle(
     fontWeight: FontWeight.w600,
     color: AppColors.dartBlue,
@@ -28,6 +33,11 @@ abstract class AppTextStyle {
     fontWeight: FontWeight.w600,
     color: AppColors.dartBlue,
     fontSize: 16,
+  );
+  static const TextStyle semiBold12 = TextStyle(
+    fontWeight: FontWeight.w600,
+    color: AppColors.black,
+    fontSize: 12,
   );
   //!======================================= medium ========================================
   static const TextStyle medium10 = TextStyle(

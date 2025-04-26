@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
+import 'package:yemensoft_task/features/localization/app_localizations.dart';
 
 import '../cubit/orders_cubit/orders_cubit.dart';
 
@@ -25,8 +26,8 @@ class _OrdersTabsState extends State<OrdersTabs> {
       ),
       child: Row(
         children: [
-          _buildTab(title: 'New', index: 0),
-          _buildTab(title: 'Others', index: 1),
+          _buildTab(title: '11'.tr(context), index: 0),
+          _buildTab(title: '12'.tr(context), index: 1),
         ],
       ),
     );

@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:yemensoft_task/features/localization/app_localizations.dart';
+
 class OrderBillEntity {
   final String billSrl;
   final String billDate;
@@ -15,16 +18,16 @@ class OrderBillEntity {
     required this.dlvryStatusFlg,
   });
 
-  String get status {
+  String  status(BuildContext context) {
     switch (dlvryStatusFlg) {
       case 0:
-        return 'New';
+        return '11'.tr(context);
       case 1:
-        return 'Delivering';
+        return '18'.tr(context);
       case 2:
-        return 'Returned';
+        return '20'.tr(context);
       case 3:
-        return 'Delivered';
+        return '19'.tr(context);
       default:
         return 'Unknown';
     }

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:yemensoft_task/core/utils/app_images.dart';
 import 'package:yemensoft_task/core/utils/app_text_style.dart';
 import 'package:yemensoft_task/core/utils/functions/validated_inputs.dart';
+import 'package:yemensoft_task/features/localization/app_localizations.dart';
 import 'package:yemensoft_task/features/login/domain/entities/login_entities.dart';
 import 'package:yemensoft_task/features/login/presentation/bloc/login_cubit/login_cubit.dart';
 import 'package:yemensoft_task/features/login/presentation/widgets/custom_auth_button.dart';
@@ -62,26 +63,26 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 child: Column(
                   children: [
                     const SizedBox(height: 132),
-                    Text('Welcome Back!', style: AppTextStyle.semiBold29),
+                    Text('1'.tr(context), style: AppTextStyle.semiBold29),
                     const SizedBox(height: 12),
                     Text(
-                      'Log back into your account',
+                      '2'.tr(context),
                       style: AppTextStyle.medium12,
                     ),
                     const SizedBox(height: 44),
                     CustomTextFormField(
-                      text: "User ID",
+                      text: "3".tr(context),
                       controller: userIdController,
                       validator: (p0) {
-                        return validateInput(p0!);
+                        return validateInput(p0!,'24'.tr(context));
                       },
                     ),
                     const SizedBox(height: 8),
                     CustomTextFormField(
-                      text: "Password",
+                      text: "4".tr(context),
                       controller: passwordController,
                       validator: (p0) {
-                        return validateInput(p0!);
+                        return validateInput(p0!,'24'.tr(context));
                       },
                       obscureText: true,
                     ),
@@ -90,7 +91,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       alignment: AlignmentDirectional.centerEnd,
                       child: TextButton(
                         child: Text(
-                          'Show More',
+                          '5'.tr(context),
                           style: AppTextStyle.semiBold14,
                         ),
                         onPressed: () {},
@@ -98,7 +99,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     ),
                     const SizedBox(height: 24),
                     CustomLoginButton(
-                      text: 'Log in',
+                      text: '6'.tr(context),
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
                           LoginEntities loginEntities = LoginEntities(

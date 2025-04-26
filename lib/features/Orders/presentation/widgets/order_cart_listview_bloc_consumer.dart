@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:yemensoft_task/core/utils/app_images.dart';
-import 'package:yemensoft_task/core/utils/app_text_style.dart';
+import 'package:yemensoft_task/core/utils/app_colors.dart';
 import 'package:yemensoft_task/features/orders/presentation/cubit/orders_cubit/orders_cubit.dart';
 import 'package:yemensoft_task/features/orders/presentation/widgets/no_order_yet_widget.dart';
 import '../../../../core/dummy_data/orders_dummy_data.dart';
@@ -18,7 +16,7 @@ class OrderCartListViewBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is OrdersError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.message), backgroundColor: Colors.red),
+            SnackBar(content: Text(state.message), backgroundColor: AppColors.red),
           );
           context.read<OrdersCubit>().getNewBills();
         }
