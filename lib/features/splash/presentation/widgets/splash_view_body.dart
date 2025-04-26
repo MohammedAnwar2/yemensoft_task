@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -30,9 +31,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Spacer(),
-          SvgPicture.asset(AppImages.imagesLogo2),
+          FadeInLeftBig(animate: true,child: SvgPicture.asset(AppImages.imagesLogo2)),
           Spacer(),
-          SvgPicture.asset(AppImages.imagesDeliveryman2),
+          FadeInRightBig(animate: true,child: SvgPicture.asset(AppImages.imagesDeliveryman2)),
         ],
       ),
     );
