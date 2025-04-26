@@ -37,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       cursorColor: AppColors.dartBlue,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric( horizontal: 12,vertical: 12),
+        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         suffixIcon: suffixIcon,
         filled: true,
         fillColor: AppColors.lightBlue,
@@ -49,19 +49,14 @@ class CustomTextFormField extends StatelessWidget {
 
         labelStyle: AppTextStyle.regular14,
         border: boardMethod(),
-        
       ),
-
     );
   }
 
   OutlineInputBorder boardMethod() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(32),
-      borderSide: BorderSide(
-        width: 1,
-        color: AppColors.lightBlue,
-      ),
+      borderSide: BorderSide(width: 1, color: AppColors.lightBlue),
     );
   }
 }

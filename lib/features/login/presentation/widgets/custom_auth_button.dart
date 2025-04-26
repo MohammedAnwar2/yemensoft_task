@@ -23,12 +23,11 @@ class CustomLoginButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(32),
             ),
-            padding: const EdgeInsets.symmetric(
-              vertical: 12,
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: Text(
+              text,
+              style: AppTextStyle.medium16.copyWith(color: AppColors.white),
             ),
-            child: Text(text, style: AppTextStyle.medium16.copyWith(
-              color: AppColors.white,
-            )),
           ),
         ),
       ],

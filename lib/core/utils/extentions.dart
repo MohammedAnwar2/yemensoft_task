@@ -7,7 +7,8 @@ extension NavigationArguments on BuildContext {
       return args;
     } else {
       throw Exception(
-          "Expected arguments of type $T but found ${args.runtimeType}");
+        "Expected arguments of type $T but found ${args.runtimeType}",
+      );
     }
   }
 
