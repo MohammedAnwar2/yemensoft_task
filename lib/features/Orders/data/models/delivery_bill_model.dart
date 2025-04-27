@@ -76,28 +76,28 @@ class OrderBillModel {
     );
   }
 
-factory OrderBillModel.fromMap(Map<String, dynamic> json) {
-  return OrderBillModel(
-    billType: json['bill_type'] as String?,
-    billNo: json['bill_no'] as String?,
-    billSrl: json['bill_srl'] as String?,
-    billDate: json['bill_date'] as String?,
-    billTime: json['bill_time'] as String?,
-    billAmt: json['bill_amt'] as String?,
-    taxAmt: json['tax_amt'] as String?,
-    dlvryAmt: json['dlvry_amt'] as String?,
-    mobileNo: json['mobile_no'] as String?,
-    cstmrNm: json['cstmr_nm'] as String?,
-    rgnNm: json['rgn_nm'] as String?,
-    cstmrBuildNo: json['cstmr_build_no'] as String?,
-    cstmrFloorNo: json['cstmr_floor_no'] as String?,
-    cstmrAprtmntNo: json['cstmr_aprtmnt_no'] as String?,
-    cstmrAddrss: json['cstmr_addrss'] as String?,
-    latitude: json['latitude'] as String?,
-    longitude: json['longitude'] as String?,
-    dlvryStatusFlg: json['dlvry_status_flg'] as String?,
-  );
-}
+  factory OrderBillModel.fromMap(Map<String, dynamic> json) {
+    return OrderBillModel(
+      billType: json['bill_type'] as String?,
+      billNo: json['bill_no'] as String?,
+      billSrl: json['bill_srl'] as String?,
+      billDate: json['bill_date'] as String?,
+      billTime: json['bill_time'] as String?,
+      billAmt: json['bill_amt'] as String?,
+      taxAmt: json['tax_amt'] as String?,
+      dlvryAmt: json['dlvry_amt'] as String?,
+      mobileNo: json['mobile_no'] as String?,
+      cstmrNm: json['cstmr_nm'] as String?,
+      rgnNm: json['rgn_nm'] as String?,
+      cstmrBuildNo: json['cstmr_build_no'] as String?,
+      cstmrFloorNo: json['cstmr_floor_no'] as String?,
+      cstmrAprtmntNo: json['cstmr_aprtmnt_no'] as String?,
+      cstmrAddrss: json['cstmr_addrss'] as String?,
+      latitude: json['latitude'] as String?,
+      longitude: json['longitude'] as String?,
+      dlvryStatusFlg: json['dlvry_status_flg'] as String?,
+    );
+  }
   Map<String, dynamic> toMap() {
     return {
       "BILL_TYPE": billType,
@@ -121,23 +121,14 @@ factory OrderBillModel.fromMap(Map<String, dynamic> json) {
     };
   }
 
-
   static Map<String, dynamic> toJson(LoginEntities loginEntities) {
     return {
-    "Value": {
-        "P_DLVRY_NO": "1010",
-        "P_LANG_NO": "1",
+      "Value": {
+        "P_DLVRY_NO": loginEntities.delivryNO,
+        "P_LANG_NO": loginEntities.lang,
         "P_BILL_SRL": "",
-        "P_PRCSSD_FLG": ""
-    }
-};
-    // return {
-    //   "Value": {
-    //     "P_DLVRY_NO": loginEntities.delivryNO,
-    //     "P_LANG_NO": loginEntities.lang,
-    //     "P_BILL_SRL": "",
-    //     "P_PRCSSD_FLG": "",
-    //   },
-    // };
+        "P_PRCSSD_FLG": "",
+      },
+    };
   }
 }
