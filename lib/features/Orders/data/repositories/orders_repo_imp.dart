@@ -25,6 +25,8 @@ class OrderRepositoryImp implements OrderRepository {
       List<OrderBillEntity> orderBillEntity = [];
       mappingData(localBills, orderBillEntity);
       return Either.right(orderBillEntity);
+    } on QueriesException catch (e) {
+      return Either.left(QueriesFailure(e.errorMessage));
     } on EmptyCacheException catch (e) {
       return Either.left(EmptyCacheFailure(e.errorMessage));
     }
@@ -37,6 +39,8 @@ class OrderRepositoryImp implements OrderRepository {
       List<OrderBillEntity> orderBillEntity = [];
       mappingData(localBills, orderBillEntity);
       return Either.right(orderBillEntity);
+    } on QueriesException catch (e) {
+      return Either.left(QueriesFailure(e.errorMessage));
     } on EmptyCacheException catch (e) {
       return Either.left(EmptyCacheFailure(e.errorMessage));
     }
