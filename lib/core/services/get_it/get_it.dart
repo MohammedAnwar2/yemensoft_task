@@ -61,14 +61,14 @@ void _orders() {
   );
   getIt.registerLazySingleton(
     () => OrderRepositoryImp(
-      localDataSource: getIt<OrdersSharedPrefLocalDatasourceImp>(),
+      localDataSource: getIt<OrderSQfliteDatasourceImp>(),
       remoteDataSource: getIt<OrdersRemoteDatasourceImp>(),
       // networkConnection: getIt<CheckNetworkConnection>(),
     ),
   );
 
-  getIt.registerLazySingleton<OrdersSharedPrefLocalDatasourceImp>(
-    () => OrdersSharedPrefLocalDatasourceImp.instance,
+  getIt.registerLazySingleton<OrderSQfliteDatasourceImp>(
+    () => OrderSQfliteDatasourceImp.instance,
   );
   getIt.registerLazySingleton<OrdersRemoteDatasourceImp>(
     () => OrdersRemoteDatasourceImp(getIt<ApiConsumer>()),
