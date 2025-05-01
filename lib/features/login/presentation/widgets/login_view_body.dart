@@ -41,39 +41,43 @@ class _LoginViewBodyState extends State<LoginViewBody> {
         padding: EdgeInsets.only(
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        child: Padding(
-          padding: const EdgeInsetsDirectional.only(end: 16),
-          child: Column(
-            children: [
-              const LoginTopHeaderSection(),
-              Provider.value(
-                value: loginFormEntities,
-                child: const CustomLoginForm(),
+        child: Column(
+          children: [
+            const LoginTopHeaderSection(),
+            Padding(
+              padding: const EdgeInsetsDirectional.only(end: 16),
+              child: Column(
+                children: [
+                  Provider.value(
+                    value: loginFormEntities,
+                    child: const CustomLoginForm(),
+                  ),
+                  const SizedBox(height: 25),
+                  const ShowMoreButton(),
+                  const SizedBox(height: 24),
+                  CustomLoginButton(
+                    text: '6'.tr(context),
+                    onPressed: () {
+                      if (loginFormEntities.formKey.currentState!.validate()) {
+                        LoginEntities loginEntities = LoginEntities(
+                          delivryNO: loginFormEntities.userIdController.text,
+                          password: loginFormEntities.passwordController.text,
+                          lang: '2',
+                        );
+                        controller.login(loginEntities);
+                      } else {
+                        loginFormEntities.autovalidateMode =
+                            AutovalidateMode.always;
+                        setState(() {});
+                      }
+                    },
+                  ),
+                  const SizedBox(height: 49),
+                  const DeliveryImageWidget(),
+                ],
               ),
-              const SizedBox(height: 25),
-              const ShowMoreButton(),
-              const SizedBox(height: 24),
-              CustomLoginButton(
-                text: '6'.tr(context),
-                onPressed: () {
-                  if (loginFormEntities.formKey.currentState!.validate()) {
-                    LoginEntities loginEntities = LoginEntities(
-                      delivryNO: loginFormEntities.userIdController.text,
-                      password: loginFormEntities.passwordController.text,
-                      lang: '2',
-                    );
-                    controller.login(loginEntities);
-                  } else {
-                    loginFormEntities.autovalidateMode =
-                        AutovalidateMode.always;
-                    setState(() {});
-                  }
-                },
-              ),
-              const SizedBox(height: 49),
-              const DeliveryImageWidget(),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
