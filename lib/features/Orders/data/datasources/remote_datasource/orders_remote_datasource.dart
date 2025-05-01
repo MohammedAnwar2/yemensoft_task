@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:yemensoft_task/core/api/api_consumer.dart';
 import 'package:yemensoft_task/core/api/end_ponits.dart';
 import 'package:yemensoft_task/features/login/domain/entities/login_entities.dart';
