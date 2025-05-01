@@ -43,8 +43,7 @@ class OrderCard extends StatelessWidget {
                       _verticalDivider(),
                       _buildInfoColumn(
                         '15'.tr(context),
-                        double.parse( deliveryBillEntity.totalPrice.toStringAsFixed(2)).toString(),
-                       
+                        formatPrice(deliveryBillEntity.totalPrice),
                         color: AppColors.black,
                       ),
                       _verticalDivider(),
@@ -91,5 +90,14 @@ class OrderCard extends StatelessWidget {
       color: AppColors.lightGrey,
       margin: const EdgeInsets.symmetric(horizontal: 8),
     );
+  }
+
+  String formatPrice(double value) {
+    double rounded = double.parse(value.toStringAsFixed(2));
+    if (rounded == rounded.toInt()) {
+      return rounded.toInt().toString(); 
+    } else {
+      return rounded.toString();
+    }
   }
 }
