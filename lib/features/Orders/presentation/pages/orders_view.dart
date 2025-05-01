@@ -18,7 +18,7 @@ class _OrdersViewState extends State<OrdersView> with WidgetsBindingObserver {
   @override
   void initState() {
      WidgetsBinding.instance.addObserver(this);
-    sessionManager.resetSessionTimer(context);
+    sessionManager.startSessionTimer(context);
     super.initState();
   }
 
