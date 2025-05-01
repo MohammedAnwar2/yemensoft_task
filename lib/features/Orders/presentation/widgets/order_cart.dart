@@ -16,7 +16,7 @@ class OrderCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       elevation: 4,
       child: Container(
-        padding: EdgeInsetsDirectional.only(start: 19),
+        padding: const EdgeInsetsDirectional.only(start: 19),
         child: Row(
           children: [
             Expanded(
@@ -24,16 +24,16 @@ class OrderCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "#${deliveryBillEntity.billSrl}",
+                    '#${deliveryBillEntity.billSrl}',
                     style: AppTextStyle.medium12.copyWith(
                       color: AppColors.grey,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       _buildInfoColumn(
-                        "14".tr(context),
+                        '14'.tr(context),
                         deliveryBillEntity.status(context),
                         color: filterStatus(
                           status: deliveryBillEntity.status(context),
@@ -42,14 +42,14 @@ class OrderCard extends StatelessWidget {
                       ),
                       _verticalDivider(),
                       _buildInfoColumn(
-                        "15".tr(context),
+                        '15'.tr(context),
                         double.parse( deliveryBillEntity.totalPrice.toStringAsFixed(2)).toString(),
                        
                         color: AppColors.black,
                       ),
                       _verticalDivider(),
                       _buildInfoColumn(
-                        "16".tr(context),
+                        '16'.tr(context),
                         deliveryBillEntity.billDate,
                         color: AppColors.black,
                       ),
@@ -72,10 +72,10 @@ class OrderCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(title, style: AppTextStyle.medium12),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           FittedBox(
             child: Text(
-              "$value ",
+              '$value ',
               style: AppTextStyle.semiBold16.copyWith(color: color),
             ),
           ),
@@ -89,7 +89,7 @@ class OrderCard extends StatelessWidget {
       height: 40,
       width: 1,
       color: AppColors.lightGrey,
-      margin: EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 8),
     );
   }
 }

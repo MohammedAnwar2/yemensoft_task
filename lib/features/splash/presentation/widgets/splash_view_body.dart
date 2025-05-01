@@ -30,9 +30,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Spacer(),
+          const Spacer(),
           FadeInLeftBig(animate: true,child: SvgPicture.asset(AppImages.imagesLogo2)),
-          Spacer(),
+          const Spacer(),
           FadeInRightBig(animate: true,child: SvgPicture.asset(AppImages.imagesDeliveryman2)),
         ],
       ),

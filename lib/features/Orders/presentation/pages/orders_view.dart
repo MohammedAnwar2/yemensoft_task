@@ -45,7 +45,7 @@ class _OrdersViewState extends State<OrdersView> with WidgetsBindingObserver {
       child: Scaffold(
         body: BlocProvider(
           create: (context) => getIt<OrdersCubit>()..saveBills(),
-          child: OrdersViewBody(),
+          child: const OrdersViewBody(),
         ),
       ),
     );

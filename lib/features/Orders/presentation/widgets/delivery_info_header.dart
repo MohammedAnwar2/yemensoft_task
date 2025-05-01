@@ -20,7 +20,7 @@ class DeliveryInfoHeader extends StatelessWidget {
       builder: (context, state) {
         final bool isEnglish = state.locale.languageCode == 'en';
         return Container(
-          padding: EdgeInsetsDirectional.only(start: 16),
+          padding: const EdgeInsetsDirectional.only(start: 16),
           color: AppColors.red,
           child: FadeInDown(
             child: Row(

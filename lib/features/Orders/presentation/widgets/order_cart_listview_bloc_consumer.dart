@@ -26,7 +26,7 @@ class OrderCartListViewBlocConsumer extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is OrdersEmpty) {
-          return NoOrdersYetWidget();
+          return const NoOrdersYetWidget();
         } else if (state is OrdersLoaded) {
           return OrderCardListView(deliveryBillEntities: state.bills);
         } else {

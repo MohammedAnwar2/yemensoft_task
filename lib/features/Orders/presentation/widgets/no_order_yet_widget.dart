@@ -15,7 +15,7 @@ class NoOrdersYetWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 53),
+          const SizedBox(height: 53),
           SvgPicture.asset(AppImages.imagesEmptyorder),
           const SizedBox(height: 46),
            Text(
@@ -28,7 +28,7 @@ class NoOrdersYetWidget extends StatelessWidget {
             style: AppTextStyle.regular16,
             textAlign: TextAlign.center,
           ),
-          Spacer(),
+          const Spacer(),
         ],
       ),
     );

@@ -27,12 +27,12 @@ class OrderDetailsButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "13".tr(context),
+                    '13'.tr(context),
                     textAlign: TextAlign.center,
                     style: AppTextStyle.regular8,
                   ),
-                  SizedBox(height: 8),
-                  Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
+                  const SizedBox(height: 8),
+                  const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
                 ],
               ),
             ),
