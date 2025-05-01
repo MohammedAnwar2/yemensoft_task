@@ -18,7 +18,7 @@ class OrdersTabs extends StatefulWidget {
 
 class _OrdersTabsState extends State<OrdersTabs> {
   int selectedIndex = 0;
-  final sessionManager = getIt<SessionManager>(); 
+  final sessionManager = getIt<SessionManager>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,9 +47,10 @@ class _OrdersTabsState extends State<OrdersTabs> {
           sessionManager.resetSessionTimer(context);
           setState(() {
             selectedIndex = index;
-            if(selectedIndex == 0) {
+            if (selectedIndex == 0 && !isSelected) {
               context.read<OrdersCubit>().getNewBills();
-            } else {
+            }
+            if (selectedIndex == 1 && !isSelected) {
               context.read<OrdersCubit>().getOtherBills();
             }
           });
