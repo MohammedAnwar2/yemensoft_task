@@ -23,7 +23,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
         } else if (state is LoginSuccess) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text("22".tr(context)),
+              content: Text('22'.tr(context)),
               backgroundColor: Colors.green,
             ),
           );
@@ -34,7 +34,7 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomModalProgressHUD(
           inAsyncCall: state is LoginLoading,
-          child: LoginViewBody(),
+          child: const LoginViewBody(),
         );
       },
     );

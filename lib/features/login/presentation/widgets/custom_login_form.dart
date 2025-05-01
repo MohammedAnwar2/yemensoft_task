@@ -28,7 +28,7 @@ class CustomLoginForm extends StatelessWidget {
           const SizedBox(height: 44),
           FadeInRight(
             child: CustomTextFormField(
-              text: "3".tr(context),
+              text: '3'.tr(context),
               controller: loginFormEntities.userIdController,
               validator: (p0) {
                 return validateInput(p0!, '24'.tr(context));
@@ -38,7 +38,7 @@ class CustomLoginForm extends StatelessWidget {
           const SizedBox(height: 8),
           FadeInLeft(
             child: CustomTextFormField(
-              text: "4".tr(context),
+              text: '4'.tr(context),
               controller: loginFormEntities.passwordController,
               validator: (p0) {
                 return validateInput(p0!, '24'.tr(context));
