@@ -8,7 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   await InitServices.init();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

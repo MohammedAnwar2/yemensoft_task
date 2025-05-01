@@ -1,5 +1,3 @@
-import 'package:yemensoft_task/features/localization/app_localizations.dart';
-
 String? validateInput(
   String? value, 
   String errorMessage ,
